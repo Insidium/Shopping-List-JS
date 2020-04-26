@@ -15,7 +15,7 @@ function addItem(event) {
   shopDiv.classList.add("shopping");
   //Create list item
   const newItem = document.createElement("li");
-  newItem.innerText = "Pow!";
+  newItem.innerText = shopInput.value;
   newItem.classList.add("shop-item");
   shopDiv.appendChild(newItem);
   //Check item button
@@ -30,4 +30,6 @@ function addItem(event) {
   shopDiv.appendChild(deleteButton);
   //Append to list
   shopList.appendChild(shopDiv);
+  //Clear input value
+  shopInput.value = "";
 }

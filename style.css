@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(105deg, #7a52ac, #3d6cee);
+  background: linear-gradient(105deg, #43cea2, #185a9d);
   color: #fff;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
@@ -32,13 +32,56 @@ form button {
 }
 
 form button {
-  color: #3d6cee;
+  color: #185a9d;
   background: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: #7a52ac;
+  background: #43cea2;
   color: #fff;
+}
+
+.shop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.shopping {
+  margin: 0.5rem;
+  background: #fff;
+  color: #185a9d;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopping li {
+  flex: 1;
+}
+
+.delete-btn,
+.done-btn {
+  background: #43cea2;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  background: #e64d4d;
+}
+
+.shop-item {
+  padding: 0rem 0.5rem;
 }
