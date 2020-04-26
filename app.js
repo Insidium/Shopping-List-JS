@@ -2,11 +2,11 @@
 const shopInput = document.querySelector(".shop-input");
 const shopButton = document.querySelector(".shop-button");
 const shopList = document.querySelector(".shop-list");
-
+const filterOption = document.querySelector(".filter-item");
 //Event Listeners
 shopButton.addEventListener("click", addItem);
 shopList.addEventListener("click", deleteCheck);
-
+filterOption.addEventListener("click", filterShopItem);
 //Functions
 function addItem(event) {
   //Prevent form from submitting
@@ -40,11 +40,40 @@ function deleteCheck(event) {
   //Delete list item
   if (item.classList[0] === "delete-btn") {
     const shopItem = item.parentElement;
-    shopItem.remove();
+    //Animation
+    shopItem.classList.add("drop");
+    shopItem.addEventListener("transitionend", function () {
+      shopItem.remove();
+    });
   }
 
   if (item.classList[0] === "done-btn") {
     const shopItem = item.parentElement;
     shopItem.classList.toggle("done");
   }
+}
+
+function filterShopItem(event) {
+  const shopItems = shopList.childNodes;
+  shopItems.forEach(function (item) {
+    switch (event.target.value) {
+      case "all":
+        item.style.display = "flex";
+        break;
+      case "gotit":
+        if (item.classList.contains("done")) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+        break;
+      case "needit":
+        if (!item.classList.contains("done")) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+        break;
+    }
+  });
 }
