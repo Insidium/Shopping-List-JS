@@ -85,3 +85,13 @@ form button:hover {
 .shop-item {
   padding: 0rem 0.5rem;
 }
+
+.fa-check-circle,
+.fa-trash-alt {
+  pointer-events: none;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

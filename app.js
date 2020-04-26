@@ -5,6 +5,7 @@ const shopList = document.querySelector(".shop-list");
 
 //Event Listeners
 shopButton.addEventListener("click", addItem);
+shopList.addEventListener("click", deleteCheck);
 
 //Functions
 function addItem(event) {
@@ -32,4 +33,18 @@ function addItem(event) {
   shopList.appendChild(shopDiv);
   //Clear input value
   shopInput.value = "";
+}
+
+function deleteCheck(event) {
+  const item = event.target;
+  //Delete list item
+  if (item.classList[0] === "delete-btn") {
+    const shopItem = item.parentElement;
+    shopItem.remove();
+  }
+
+  if (item.classList[0] === "done-btn") {
+    const shopItem = item.parentElement;
+    shopItem.classList.toggle("done");
+  }
 }
